@@ -399,3 +399,25 @@
   </script>
 </body>
 </html>
+// Substitua o trecho do btn.onclick por este:
+btn.onclick = () => {
+  // Limpa a seleção anterior de todos os botões desta pergunta
+  const todosBotoes = divOpcoes.querySelectorAll('.btn-opcao');
+  todosBotoes.forEach(b => {
+    b.style.backgroundColor = 'white';
+    b.style.borderColor = '#ccc';
+  });
+
+  if (opcaoIndex === q.correta) {
+    msgSucesso.style.display = 'block';
+    btn.style.backgroundColor = '#d4edda';
+    btn.style.borderColor = '#c3e6cb';
+  } else {
+    msgSucesso.style.display = 'none';
+    btn.style.backgroundColor = '#f8d7da';
+    btn.style.borderColor = '#f5c6cb';
+  }
+};
+html {
+  scroll-behavior: smooth;
+}
