@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coritiba Foot Ball Club - Fan Page Histórica</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f4f4f9;
+      color: #333;
+      padding-bottom: 50px;
+    }
+    header {
+      background-color: #005225;
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+    }
+    nav {
+      background-color: #003819;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #a8e6cf;
+    }
+    section {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 25px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #005225;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #005225;
+      padding-bottom: 8px;
+    }
+    /* História */
+    .historia-texto p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+      text-align: justify;
+    }
+    /* Títulos */
+    .grid-titulos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+    .card-titulo {
+      background: #eaf5ee;
+      border-left: 5px solid #005225;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    .card-titulo h3 {
+      color: #003819;
+      margin-bottom: 5px;
+    }
+    .card-titulo p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    /* Jogadores */
+    .grid-jogadores {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card-jogador {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fafafa;
+    }
+    .card-jogador h3 {
+      color: #005225;
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+    .card-jogador .posicao {
+      font-weight: bold;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    .card-jogador .bio {
+      font-size: 0.9rem;
+      color: #444;
+      margin: 12px 0;
+      line-height: 1.4;
+    }
+    .btn-like {
+      background-color: #e0e0e0;
+      color: #333;
+      border: 1px solid #ccc;
+      padding: 8px 16px;
+      margin-top: auto;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+    .btn-like.curtido {
+      background-color: #005225;
+      color: white;
+      border-color: #005225;
+    }
+    /* Quiz */
+    .pergunta-container {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 6px;
+    }
+    .opcoes {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .btn-opcao {
+      padding: 10px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    .btn-opcao:hover {
+      background: #eee;
+    }
+    .mensagem-sucesso {
+      display: none;
+      color: #005225;
+      font-weight: bold;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #d4edda;
+      border-radius: 4px;
+      border: 1px solid #c3e6cb;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Coritiba Foot Ball Club</h1>
+    <p>O Mais Vitorioso do Estado • Fundado em 1909</p>
+  </header>
+
+  <nav>
+    <a href="#historia">História</a>
+    <a href="#titulos">Títulos</a>
+    <a href="#jogadores">Ídolos</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
+
+  <!-- SEÇÃO HISTÓRIA -->
+  <section id="historia">
+    <h2>História do Coxa</h2>
+    <div class="historia-texto">
+      <p>Fundado em <strong>12 de outubro de 1909</strong> por jovens da comunidade germânica de Curitiba, o Coritiba Foot Ball Club é o clube de futebol em atividade mais antigo do estado do Paraná.</p>
+      <p>Conhecido carinhosamente como <em>Coxa-Branca</em>, o clube teve como primeira praça de esportes o Hipódromo do Guabirotuba e, posteriormente, construiu a sua lendária casa: o <strong>Estádio Major Antônio Couto Pereira</strong>, inaugurado em 1932 no bairro Alto da Glória.</p>
+      <p>Ao longo das décadas, o Coritiba construiu uma hegemonia estadual incontestável e gravou seu nome na história do futebol nacional e internacional, sendo o primeiro clube paranaense a disputar a Copa Libertadores e o primeiro a sagrar-se Campeão Brasileiro de Futebol em 1985.</p>
+    </div>
+  </section>
+
+  <!-- SEÇÃO TÍTULOS -->
+  <section id="titulos">
+    <h2>Galeria de Títulos</h2>
+    <div class="grid-titulos">
+      
+      <div class="card-titulo">
+        <h3>🏆 Campeonato Brasileiro Série A</h3>
+        <p><strong>1 Título:</strong> 1985</p>
+        <p>Conquistado no lendário Maracanã ao derrotar o Bangu nos pênaltis.</p>
+      </div>
+
+      <div class="card-titulo">
+        <h3>🏆 Torneio do Povo</h3>
+        <p><strong>1 Título:</strong> 1973</p>
+        <p>Competição oficial que reuniu os clubes de maior torcida do Brasil.</p>
+      </div>
+
+      <div class="card-titulo">
+        <h3>🏆 Campeonato Brasileiro Série B</h3>
+        <p><strong>2 Títulos:</strong> 2007 e 2010</p>
+        <p>Conquistas nacionais que marcaram o retorno do clube à elite.</p>
+      </div>
+
+      <div class="card-titulo">
+        <h3>🏆 Fita Azul Internacional</h3>
+        <p><strong>1 Honraria:</strong> 1972</p>
+        <p>Premiado pela invencibilidade durante excursão na Europa e África.</p>
+      </div>
+
+      <div class="card-titulo">
+        <h3>🏆 Campeonato Paranaense</h3>
+        <p><strong>39 Títulos</strong></p>
+        <p>O maior campeão do estado do Paraná, incluindo o hexacampeonato nos anos 70 (1971 a 1976).</p>
+      </div>
+
+      <div class="card-titulo">
+        <h3>🏆 Taça Akwaba</h3>
+        <p><strong>1 Título:</strong> 1983</p>
+        <p>Torneio internacional vencido na Costa do Marfim.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO JOGADORES / ÍDOLOS -->
+  <section id="jogadores">
+    <h2>Grandes Ídolos da História</h2>
+    <div class="grid-jogadores">
+      
+      <div class="card-jogador">
+        <h3>Dirceu Krüger</h3>
+        <p class="posicao">Meia | 1966–1975</p>
+        <p class="bio">O "Flecha Loira" dedicou mais de 50 anos ao clube como jogador e técnico. Possui uma estátua no Couto Pereira.</p>
+        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+      </div>
+
+      <div class="card-jogador">
+        <h3>Alex</h3>
+        <p class="posicao">Meio-Campista | 1995–1997 / 2013–2014</p>
+        <p class="bio">Revelado na base alviverde, um dos meias mais geniais do futebol mundial. Voltou para encerrar a carreira no Coxa.</p>
+        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+      </div>
+
+      <div class="card-jogador">
+        <h3>Jairo</h3>
+        <p class="posicao">Goleiro | 1971–1977 / 1984–1987</p>
+        <p class="bio">O "Pantera Negra" é o jogador que mais vezes vestiu a camisa do Coritiba (410 jogos) e foi campeão brasileiro em 1985.</p>
+        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+      </div>
+
+      <div class="card-jogador">
+        <h3>Duílio</h3>
+        <p class="posicao">Atacante | 1954–1963</p>
+        <p class="bio">Maior artilheiro da história do Coritiba, com incríveis 254 gols marcados com a camisa alviverde.</p>
+        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+      </div>
+
+      <div class="card-jogador">
+        <h3>Aroldo Fedato</h3>
+        <p class="posicao">Zagueiro | 1943–1957</p>
+        <p class="bio">Conhecido como "Estampilla Rubia", é um dos maiores defensores do clube e conquistou 7 estaduais.</p>
+        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+      </div>
+
+      <div class="card-jogador">
+        <h3>Lela</h3>
+        <p class="posicao">Atacante | 1985–1988</p>
+        <p class="bio">Famoso pela comemoração fazendo careta, foi peça fundamental no ataque campeão brasileiro de 1985.</p>
+        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SEÇÃO QUIZ -->
+  <section id="quiz">
+    <h2>Quiz Coxa-Branca</h2>
+    <div id="quiz-container"></div>
+  </section>
+
+  <script>
+    // Função para Alternar Like (Ativar e Desativar)
+    function alternarLike(botao) {
+      const contador = botao.querySelector('.likes');
+      let likesAtuais = parseInt(contador.innerText);
+
+      if (botao.classList.contains('curtido')) {
+        // Se já está curtido, remove o like
+        botao.classList.remove('curtido');
+        contador.innerText = likesAtuais - 1;
+        botao.innerHTML = `🤍 Curtir (<span class="likes">${likesAtuais - 1}</span>)`;
+      } else {
+        // Se não está curtido, adiciona o like
+        botao.classList.add('curtido');
+        contador.innerText = likesAtuais + 1;
+        botao.innerHTML = `💚 Curtido (<span class="likes">${likesAtuais + 1}</span>)`;
+      }
+    }
+
+    // Estrutura das 7 perguntas do Quiz
+    const perguntas = [
+      {
+        pergunta: "1. Em que ano o Coritiba foi Campeão Brasileiro da Série A?",
+        opcoes: ["1980", "1985", "1989", "1992"],
+        correta: 1
+      },
+      {
+        pergunta: "2. Qual é o nome oficial do estádio do Coritiba?",
+        opcoes: ["Arena da Baixada", "Vila Capanema", "Estádio Major Antônio Couto Pereira", "Pinheirão"],
+        correta: 2
+      },
+      {
+        pergunta: "3. Quem é o maior artilheiro da história do Coritiba?",
+        opcoes: ["Alex", "Keirrison", "Dirceu Krüger", "Duílio"],
+        correta: 3
+      },
+      {
+        pergunta: "4. Em que ano o Coritiba foi fundado?",
+        opcoes: ["1909", "1912", "1924", "1899"],
+        correta: 0
+      },
+      {
+        pergunta: "5. Qual honraria internacional o Coritiba recebeu em 1972 por terminar uma excursão invicto?",
+        opcoes: ["Taça Libertadores", "Fita Azul", "Taça Mundial", "Troféu Teresa Herrera"],
+        correta: 1
+      },
+      {
+        pergunta: "6. Qual torneio nacional de caráter oficial reuniu os maiores clubes do país e foi vencido pelo Coxa em 1973?",
+        opcoes: ["Copa do Brasil", "Torneio do Povo", "Taça Brasil", "Supercopa"],
+        correta: 1
+      },
+      {
+        pergunta: "7. Quem é o jogador com mais partidas disputadas na história do Coritiba (410 jogos)?",
+        opcoes: ["Dirceu Krüger", "Jairo", "Alex", "Fedato"],
+        correta: 1
+      }
+    ];
+
+    // Renderizar o Quiz na tela
+    const quizContainer = document.getElementById('quiz-container');
+
+    perguntas.forEach((q) => {
+      const divPergunta = document.createElement('div');
+      divPergunta.className = 'pergunta-container';
+
+      const titulo = document.createElement('p');
+      titulo.innerHTML = `<strong>${q.pergunta}</strong>`;
+      divPergunta.appendChild(titulo);
+
+      const divOpcoes = document.createElement('div');
+      divOpcoes.className = 'opcoes';
+
+      const msgSucesso = document.createElement('div');
+      msgSucesso.className = 'mensagem-sucesso';
+      msgSucesso.innerText = "parabens por ser um bom torcedor";
+
+      q.opcoes.forEach((opcao, opcaoIndex) => {
+        const btn = document.createElement('button');
+        btn.className = 'btn-opcao';
+        btn.innerText = opcao;
+        
+        btn.onclick = () => {
+          if (opcaoIndex === q.correta) {
+            msgSucesso.style.display = 'block';
+            btn.style.backgroundColor = '#d4edda';
+            btn.style.borderColor = '#c3e6cb';
+          } else {
+            msgSucesso.style.display = 'none';
+            btn.style.backgroundColor = '#f8d7da';
+            btn.style.borderColor = '#f5c6cb';
+          }
+        };
+
+        divOpcoes.appendChild(btn);
+      });
+
+      divPergunta.appendChild(divOpcoes);
+      divPergunta.appendChild(msgSucesso);
+      quizContainer.appendChild(divPergunta);
+    });
+  </script>
+</body>
+</html>
