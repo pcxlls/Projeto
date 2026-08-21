@@ -4,171 +4,425 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coritiba Foot Ball Club - Fan Page Histórica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
     }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background-color: #f4f4f9;
-      color: #333;
-      padding-bottom: 50px;
+      background-color: #f0fdf4;
+      color: #1e293b;
+      font-family: 'Roboto', sans-serif;
+      padding-bottom: 60px;
     }
+
+    /* HEADER / HERO */
     header {
-      background-color: #005225;
+      background: linear-gradient(135deg, #003819 0%, #005225 50%, #007a37 100%);
       color: white;
       text-align: center;
-      padding: 2.5rem 1rem;
+      padding: 4rem 1.5rem 3rem;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
+
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 5px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
+
+    header p {
+      font-size: 1.2rem;
+      color: #a7f3d0;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+    }
+
+    /* NAV */
     nav {
-      background-color: #003819;
+      background-color: #002c13;
       display: flex;
       justify-content: center;
-      gap: 20px;
-      padding: 12px;
+      gap: 30px;
+      padding: 16px;
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+
     nav a {
-      color: white;
+      color: #ecfdf5;
       text-decoration: none;
-      font-weight: bold;
-      transition: color 0.2s;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
+
     nav a:hover {
-      color: #a8e6cf;
+      color: #34d399;
+      transform: translateY(-2px);
     }
+
+    /* SEÇÕES EM GERAL */
     section {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 25px;
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 35px;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      border: 1px solid #e2e8f0;
     }
+
     h2 {
+      font-family: 'Poppins', sans-serif;
       color: #005225;
-      margin-bottom: 20px;
-      border-bottom: 3px solid #005225;
-      padding-bottom: 8px;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      border-bottom: 3px solid #10b981;
+      padding-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    /* História */
-    .historia-texto p {
-      line-height: 1.7;
-      margin-bottom: 15px;
+
+    /* HISTÓRIA EXPANDIDA & DESIGN MEHORADO */
+    .historia-intro {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #334155;
+      margin-bottom: 30px;
+      background: #f0fdf4;
+      padding: 20px;
+      border-left: 5px solid #005225;
+      border-radius: 8px;
+    }
+
+    .historia-capitulos {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .capitulo-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .capitulo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .capitulo-card h3 {
+      font-family: 'Poppins', sans-serif;
+      color: #003819;
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .capitulo-card h3 i {
+      color: #10b981;
+    }
+
+    .capitulo-card p {
+      line-height: 1.75;
+      color: #475569;
+      font-size: 1.02rem;
       text-align: justify;
+      margin-bottom: 12px;
     }
-    /* Títulos */
+
+    .capitulo-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* TÍTULOS */
     .grid-titulos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 15px;
-    }
-    .card-titulo {
-      background: #eaf5ee;
-      border-left: 5px solid #005225;
-      padding: 15px;
-      border-radius: 4px;
-    }
-    .card-titulo h3 {
-      color: #003819;
-      margin-bottom: 5px;
-    }
-    .card-titulo p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-    /* Jogadores */
-    .grid-jogadores {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
     }
-    .card-jogador {
-      border: 1px solid #ddd;
-      border-radius: 8px;
+
+    .card-titulo {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+      border: 1px solid #d1fae5;
+      border-left: 6px solid #005225;
       padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+
+    .card-titulo h3 {
+      font-family: 'Poppins', sans-serif;
+      color: #003819;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-titulo p {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    /* JOGADORES / ÍDOLOS */
+    .grid-jogadores {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .card-jogador {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 24px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: #fafafa;
+      background: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
     }
+
+    .card-jogador:hover {
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+      border-color: #a7f3d0;
+    }
+
     .card-jogador h3 {
+      font-family: 'Poppins', sans-serif;
       color: #005225;
-      font-size: 1.3rem;
-      margin-bottom: 5px;
+      font-size: 1.35rem;
+      margin-bottom: 4px;
     }
+
     .card-jogador .posicao {
-      font-weight: bold;
-      color: #666;
-      font-size: 0.9rem;
-    }
-    .card-jogador .bio {
-      font-size: 0.9rem;
-      color: #444;
-      margin: 12px 0;
-      line-height: 1.4;
-    }
-    .btn-like {
-      background-color: #e0e0e0;
-      color: #333;
-      border: 1px solid #ccc;
-      padding: 8px 16px;
-      margin-top: auto;
+      font-weight: 600;
+      color: #059669;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      background: #ecfdf5;
+      padding: 4px 12px;
       border-radius: 20px;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: bold;
-      transition: all 0.2s;
     }
+
+    .card-jogador .bio {
+      font-size: 0.95rem;
+      color: #475569;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .btn-like {
+      background-color: #f1f5f9;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+      padding: 10px 20px;
+      margin-top: auto;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-like:hover {
+      background-color: #e2e8f0;
+    }
+
     .btn-like.curtido {
       background-color: #005225;
       color: white;
       border-color: #005225;
+      box-shadow: 0 4px 12px rgba(0, 82, 37, 0.3);
     }
-    /* Quiz */
-    .pergunta-container {
+
+    /* QUIZ REFORMULADO (1 PERGUNTA POR VEZ) */
+    .quiz-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 30px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .quiz-progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #e2e8f0;
+      border-radius: 5px;
       margin-bottom: 20px;
-      padding: 15px;
-      background: #fafafa;
-      border: 1px solid #eee;
-      border-radius: 6px;
+      overflow: hidden;
     }
-    .opcoes {
+
+    .quiz-progress-fill {
+      height: 100%;
+      background-color: #10b981;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    .quiz-header-status {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .pergunta-titulo {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      color: #0f172a;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .opcoes-container {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      margin-top: 10px;
+      gap: 12px;
     }
-    .btn-opcao {
-      padding: 10px;
+
+    .btn-opcao-quiz {
+      padding: 14px 18px;
       background: white;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      border: 2px solid #cbd5e1;
+      border-radius: 8px;
       cursor: pointer;
       text-align: left;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      color: #334155;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .btn-opcao:hover {
-      background: #eee;
+
+    .btn-opcao-quiz:hover:not(:disabled) {
+      border-color: #005225;
+      background: #f0fdf4;
     }
-    .mensagem-sucesso {
+
+    .btn-opcao-quiz.correta {
+      background-color: #d1fae5 !important;
+      border-color: #10b981 !important;
+      color: #065f46 !important;
+      font-weight: 700;
+    }
+
+    .btn-opcao-quiz.errada {
+      background-color: #fee2e2 !important;
+      border-color: #ef4444 !important;
+      color: #991b1b !important;
+    }
+
+    .quiz-footer {
+      margin-top: 25px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .btn-proxima {
+      background-color: #005225;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
       display: none;
+    }
+
+    .btn-proxima:hover {
+      background-color: #003819;
+    }
+
+    /* RESULTADO FINAL DO QUIZ */
+    .resultado-quiz {
+      text-align: center;
+      padding: 20px 10px;
+      display: none;
+    }
+
+    .resultado-porcentagem {
+      font-family: 'Poppins', sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
       color: #005225;
-      font-weight: bold;
-      margin-top: 10px;
-      padding: 10px;
-      background-color: #d4edda;
-      border-radius: 4px;
-      border: 1px solid #c3e6cb;
+      margin: 15px 0;
+    }
+
+    .resultado-mensagem {
+      font-size: 1.2rem;
+      color: #334155;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .btn-reiniciar {
+      background-color: #10b981;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-reiniciar:hover {
+      background-color: #059669;
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -176,63 +430,96 @@
 
   <header>
     <h1>Coritiba Foot Ball Club</h1>
-    <p>O Mais Vitorioso do Estado • Fundado em 1909</p>
+    <p>O Mais Vitorioso do Estado • Fundado em 1909 • O Glorioso Alviverde</p>
   </header>
 
   <nav>
-    <a href="#historia">História</a>
-    <a href="#titulos">Títulos</a>
-    <a href="#jogadores">Ídolos</a>
-    <a href="#quiz">Quiz</a>
+    <a href="#historia"><i class="fa-solid fa-book-open"></i> História</a>
+    <a href="#titulos"><i class="fa-solid fa-trophy"></i> Títulos</a>
+    <a href="#jogadores"><i class="fa-solid fa-star"></i> Ídolos</a>
+    <a href="#quiz"><i class="fa-solid fa-circle-question"></i> Quiz</a>
   </nav>
 
-  <!-- SEÇÃO HISTÓRIA -->
+  <!-- SEÇÃO HISTÓRIA EXPANDIDA -->
   <section id="historia">
-    <h2>História do Coxa</h2>
-    <div class="historia-texto">
-      <p>Fundado em <strong>12 de outubro de 1909</strong> por jovens da comunidade germânica de Curitiba, o Coritiba Foot Ball Club é o clube de futebol em atividade mais antigo do estado do Paraná.</p>
-      <p>Conhecido carinhosamente como <em>Coxa-Branca</em>, o clube teve como primeira praça de esportes o Hipódromo do Guabirotuba e, posteriormente, construiu a sua lendária casa: o <strong>Estádio Major Antônio Couto Pereira</strong>, inaugurado em 1932 no bairro Alto da Glória.</p>
-      <p>Ao longo das décadas, o Coritiba construiu uma hegemonia estadual incontestável e gravou seu nome na história do futebol nacional e internacional, sendo o primeiro clube paranaense a disputar a Copa Libertadores e o primeiro a sagrar-se Campeão Brasileiro de Futebol em 1985.</p>
+    <h2><i class="fa-solid fa-landmark"></i> História da Lenda Alviverde</h2>
+    
+    <div class="historia-intro">
+      O <strong>Coritiba Foot Ball Club</strong> é uma das instituições mais tradicionais e vitoriosas do futebol brasileiro. Fundado em Curitiba no ano de 1909, carrega a honra de ser o clube de futebol em atividade mais antigo do estado do Paraná e pioneiro em grandes conquistas nacionais e internacionais.
+    </div>
+
+    <div class="historia-capitulos">
+      
+      <div class="capitulo-card">
+        <h3><i class="fa-solid fa-seedling"></i> 1. A Origem e os Primeiros Anos (1909)</h3>
+        <p>A história teve início quando um grupo de jovens da comunidade germânica de Curitiba, liderados por <strong>Fritz Essenfelder</strong>, reunia-se regularmente para praticar ginástica no Clube Ginástico Teuto-Brasileiro (Turnverein). Ao receber uma bola de futebol trazida do Estado de São Paulo, o entusiasmo pelo novo esporte tomou conta dos jovens.</p>
+        <p>No dia <strong>12 de outubro de 1909</strong>, em uma reunião histórica no antigo Teatro Hauer, foi formalmente fundado o clube sob a denominação inicial de <em>Coritibano Foot Ball Club</em> (alterado pouco tempo depois para a grafia clássica <em>Coritiba Foot Ball Club</em>). O primeiro jogo oficial aconteceu em 23 de outubro de 1909 contra o time de Ponta Grossa, marcando a vitória coxa-branca por 1 a 0 e o início do futebol no Paraná.</p>
+      </div>
+
+      <div class="capitulo-card">
+        <h3><i class="fa-solid fa-building-columns"></i> 2. A Construção do Couto Pereira e a Era de Ouro</h3>
+        <p>Inicialmente disputando suas partidas no Hipódromo do Guabirotuba e posteriormente no Estádio Belfort Duarte, o clube deu um passo monumental no início da década de 1930. Sob a gestão do visão do presidente <strong>Major Antônio Couto Pereira</strong>, o Coritiba adquiriu o terreno no tradicional bairro do Alto da Glória.</p>
+        <p>Em 1932 foi inaugurado o estádio que, mais tarde, ganharia o nome de seu grande idealizador. O <strong>Estádio Major Antônio Couto Pereira</strong> tornou-se a eterna fortaleza alviverde e templo de momentos inesquecíveis do futebol sul-americano.</p>
+      </div>
+
+      <div class="capitulo-card">
+        <h3><i class="fa-solid fa-crown"></i> 3. O Hexacampeonato, Fita Azul e o Torneio do Povo (Anos 70)</h3>
+        <p>A década de 1970 marcou a hegemonia absoluta do Coxa-Branca. O clube conquistou o histórico <strong>Hexacampeonato Paranaense (1971 a 1976)</strong>, estabelecendo um domínio inédito no futebol do estado.</p>
+        <p>Em 1972, durante uma vitoriosa excursão invicta pela Europa e África, o Coritiba foi premiado com a prestigiada honraria da <strong>Fita Azul Internacional</strong>, concedida pela Confederação Brasileira de Desportos (CBD). Logo em seguida, em 1973, o Glorioso sagrou-se campeão do <strong>Torneio do Povo</strong>, competição oficial que reuniu os clubes de maior torcida de cada estado brasileiro.</p>
+      </div>
+
+      <div class="capitulo-card">
+        <h3><i class="fa-solid fa-star"></i> 4. O Triunfo Nacional: Campeão Brasileiro de 1985</h3>
+        <p>O auge da trajetória coritibana no cenário nacional ocorreu em <strong>1985</strong>. Comandado pelo mestre <strong>Enio Andrade</strong> e liderado em campo por craques como Rafael, Gomes, Lela, Toby e Índio, o Coritiba fez uma campanha heroica no Campeonato Brasileiro da Série A.</p>
+        <p>Na grande e inesquecível final disputada em 31 de julho de 1985 no Estádio do Maracanã lotado com mais de 90 mil torcedores, o Coritiba empatou em 1 a 1 com o Bangu e venceu nos pênaltis por 6 a 5, trazendo para o Estado do Paraná a sua <strong>primeira Estrela Dourada no futebol nacional</strong>.</p>
+      </div>
+
+      <div class="capitulo-card">
+        <h3><i class="fa-solid fa-guarantee"></i> 5. O Recorde Mundial e a Tradição no Século XXI</h3>
+        <p>No século XXI, o Coritiba manteve sua tradição de superação. Em 2011, o clube alcançou um feito histórico que correu o mundo: estabeleceu a incrível marca de <strong>24 vitórias consecutivas</strong> em todas as competições, feito homologado oficialmente pelo <em>Guinness World Records</em> como a maior sequência vitoriosa do futebol mundial na época.</p>
+        <p>Com 39 títulos estaduais e uma torcida apaixonada que nunca abandona seu pavilhão, o Coritiba Foot Ball Club segue orgulhando Curitiba e honrando suas cores verde e branca por onde passa.</p>
+      </div>
+
     </div>
   </section>
 
   <!-- SEÇÃO TÍTULOS -->
   <section id="titulos">
-    <h2>Galeria de Títulos</h2>
+    <h2><i class="fa-solid fa-trophy"></i> Galeria de Títulos</h2>
     <div class="grid-titulos">
       
       <div class="card-titulo">
-        <h3>🏆 Campeonato Brasileiro Série A</h3>
+        <h3><i class="fa-solid fa-star" style="color: #eab308;"></i> Camp. Brasileiro Série A</h3>
         <p><strong>1 Título:</strong> 1985</p>
         <p>Conquistado no lendário Maracanã ao derrotar o Bangu nos pênaltis.</p>
       </div>
 
       <div class="card-titulo">
-        <h3>🏆 Torneio do Povo</h3>
+        <h3><i class="fa-solid fa-users"></i> Torneio do Povo</h3>
         <p><strong>1 Título:</strong> 1973</p>
         <p>Competição oficial que reuniu os clubes de maior torcida do Brasil.</p>
       </div>
 
       <div class="card-titulo">
-        <h3>🏆 Campeonato Brasileiro Série B</h3>
+        <h3><i class="fa-solid fa-award"></i> Camp. Brasileiro Série B</h3>
         <p><strong>2 Títulos:</strong> 2007 e 2010</p>
         <p>Conquistas nacionais que marcaram o retorno do clube à elite.</p>
       </div>
 
       <div class="card-titulo">
-        <h3>🏆 Fita Azul Internacional</h3>
+        <h3><i class="fa-solid fa-ribbon"></i> Fita Azul Internacional</h3>
         <p><strong>1 Honraria:</strong> 1972</p>
         <p>Premiado pela invencibilidade durante excursão na Europa e África.</p>
       </div>
 
       <div class="card-titulo">
-        <h3>🏆 Campeonato Paranaense</h3>
+        <h3><i class="fa-solid fa-shield-halved"></i> Campeonato Paranaense</h3>
         <p><strong>39 Títulos</strong></p>
         <p>O maior campeão do estado do Paraná, incluindo o hexacampeonato nos anos 70 (1971 a 1976).</p>
       </div>
 
       <div class="card-titulo">
-        <h3>🏆 Taça Akwaba</h3>
+        <h3><i class="fa-solid fa-globe"></i> Taça Akwaba</h3>
         <p><strong>1 Título:</strong> 1983</p>
         <p>Torneio internacional vencido na Costa do Marfim.</p>
       </div>
@@ -242,49 +529,49 @@
 
   <!-- SEÇÃO JOGADORES / ÍDOLOS -->
   <section id="jogadores">
-    <h2>Grandes Ídolos da História</h2>
+    <h2><i class="fa-solid fa-users-line"></i> Grandes Ídolos da História</h2>
     <div class="grid-jogadores">
       
       <div class="card-jogador">
         <h3>Dirceu Krüger</h3>
         <p class="posicao">Meia | 1966–1975</p>
         <p class="bio">O "Flecha Loira" dedicou mais de 50 anos ao clube como jogador e técnico. Possui uma estátua no Couto Pereira.</p>
-        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+        <button class="btn-like" onclick="alternarLike(this)"><i class="fa-regular fa-heart"></i> Curtir (<span class="likes">0</span>)</button>
       </div>
 
       <div class="card-jogador">
         <h3>Alex</h3>
         <p class="posicao">Meio-Campista | 1995–1997 / 2013–2014</p>
         <p class="bio">Revelado na base alviverde, um dos meias mais geniais do futebol mundial. Voltou para encerrar a carreira no Coxa.</p>
-        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+        <button class="btn-like" onclick="alternarLike(this)"><i class="fa-regular fa-heart"></i> Curtir (<span class="likes">0</span>)</button>
       </div>
 
       <div class="card-jogador">
         <h3>Jairo</h3>
         <p class="posicao">Goleiro | 1971–1977 / 1984–1987</p>
         <p class="bio">O "Pantera Negra" é o jogador que mais vezes vestiu a camisa do Coritiba (410 jogos) e foi campeão brasileiro em 1985.</p>
-        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+        <button class="btn-like" onclick="alternarLike(this)"><i class="fa-regular fa-heart"></i> Curtir (<span class="likes">0</span>)</button>
       </div>
 
       <div class="card-jogador">
         <h3>Duílio</h3>
         <p class="posicao">Atacante | 1954–1963</p>
         <p class="bio">Maior artilheiro da história do Coritiba, com incríveis 254 gols marcados com a camisa alviverde.</p>
-        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+        <button class="btn-like" onclick="alternarLike(this)"><i class="fa-regular fa-heart"></i> Curtir (<span class="likes">0</span>)</button>
       </div>
 
       <div class="card-jogador">
         <h3>Aroldo Fedato</h3>
         <p class="posicao">Zagueiro | 1943–1957</p>
         <p class="bio">Conhecido como "Estampilla Rubia", é um dos maiores defensores do clube e conquistou 7 estaduais.</p>
-        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+        <button class="btn-like" onclick="alternarLike(this)"><i class="fa-regular fa-heart"></i> Curtir (<span class="likes">0</span>)</button>
       </div>
 
       <div class="card-jogador">
         <h3>Lela</h3>
         <p class="posicao">Atacante | 1985–1988</p>
         <p class="bio">Famoso pela comemoração fazendo careta, foi peça fundamental no ataque campeão brasileiro de 1985.</p>
-        <button class="btn-like" onclick="alternarLike(this)">🤍 Curtir (<span class="likes">0</span>)</button>
+        <button class="btn-like" onclick="alternarLike(this)"><i class="fa-regular fa-heart"></i> Curtir (<span class="likes">0</span>)</button>
       </div>
 
     </div>
@@ -292,30 +579,59 @@
 
   <!-- SEÇÃO QUIZ -->
   <section id="quiz">
-    <h2>Quiz Coxa-Branca</h2>
-    <div id="quiz-container"></div>
+    <h2><i class="fa-solid fa-graduation-cap"></i> Quiz Coxa-Branca</h2>
+    
+    <div class="quiz-card">
+      <!-- Barra de Progresso do Quiz -->
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="progress-fill"></div>
+      </div>
+
+      <!-- Container Ativo da Pergunta -->
+      <div id="quiz-body">
+        <div class="quiz-header-status">
+          <span>Pergunta <span id="num-pergunta">1</span> de 7</span>
+          <span id="score-parcial">Acertos: 0</span>
+        </div>
+
+        <div class="pergunta-titulo" id="texto-pergunta">Carregando pergunta...</div>
+
+        <div class="opcoes-container" id="container-opcoes"></div>
+
+        <div class="quiz-footer">
+          <button class="btn-proxima" id="btn-proxima" onclick="proximaPergunta()">Próxima Pergunta <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Tela Final do Quiz -->
+      <div class="resultado-quiz" id="quiz-resultado">
+        <i class="fa-solid fa-trophy" style="font-size: 3.5rem; color: #10b981;"></i>
+        <div class="resultado-porcentagem" id="porcentagem-texto">0%</div>
+        <div class="resultado-mensagem" id="mensagem-resultado">Mensagem do Resultado</div>
+        <button class="btn-reiniciar" onclick="reiniciarQuiz()"><i class="fa-solid fa-rotate-right"></i> Tentar Novamente</button>
+      </div>
+    </div>
   </section>
 
   <script>
     // Função para Alternar Like (Ativar e Desativar)
     function alternarLike(botao) {
       const contador = botao.querySelector('.likes');
+      const icone = botao.querySelector('i');
       let likesAtuais = parseInt(contador.innerText);
 
       if (botao.classList.contains('curtido')) {
-        // Se já está curtido, remove o like
         botao.classList.remove('curtido');
         contador.innerText = likesAtuais - 1;
-        botao.innerHTML = `🤍 Curtir (<span class="likes">${likesAtuais - 1}</span>)`;
+        icone.className = "fa-regular fa-heart";
       } else {
-        // Se não está curtido, adiciona o like
         botao.classList.add('curtido');
         contador.innerText = likesAtuais + 1;
-        botao.innerHTML = `💚 Curtido (<span class="likes">${likesAtuais + 1}</span>)`;
+        icone.className = "fa-solid fa-heart";
       }
     }
 
-    // Estrutura das 7 perguntas do Quiz
+    // Perguntas do Quiz
     const perguntas = [
       {
         pergunta: "1. Em que ano o Coritiba foi Campeão Brasileiro da Série A?",
@@ -354,70 +670,118 @@
       }
     ];
 
-    // Renderizar o Quiz na tela
-    const quizContainer = document.getElementById('quiz-container');
+    // Variáveis do Estado do Quiz
+    let indicePerguntaAtual = 0;
+    let acertos = 0;
+    let respondeu = false;
 
-    perguntas.forEach((q) => {
-      const divPergunta = document.createElement('div');
-      divPergunta.className = 'pergunta-container';
-
-      const titulo = document.createElement('p');
-      titulo.innerHTML = `<strong>${q.pergunta}</strong>`;
-      divPergunta.appendChild(titulo);
-
-      const divOpcoes = document.createElement('div');
-      divOpcoes.className = 'opcoes';
-
-      const msgSucesso = document.createElement('div');
-      msgSucesso.className = 'mensagem-sucesso';
-      msgSucesso.innerText = "parabens por ser um bom torcedor";
-
-      q.opcoes.forEach((opcao, opcaoIndex) => {
-        const btn = document.createElement('button');
-        btn.className = 'btn-opcao';
-        btn.innerText = opcao;
-        
-        btn.onclick = () => {
-          if (opcaoIndex === q.correta) {
-            msgSucesso.style.display = 'block';
-            btn.style.backgroundColor = '#d4edda';
-            btn.style.borderColor = '#c3e6cb';
-          } else {
-            msgSucesso.style.display = 'none';
-            btn.style.backgroundColor = '#f8d7da';
-            btn.style.borderColor = '#f5c6cb';
-          }
-        };
-
-        divOpcoes.appendChild(btn);
-      });
-
-      divPergunta.appendChild(divOpcoes);
-      divPergunta.appendChild(msgSucesso);
-      quizContainer.appendChild(divPergunta);
+    // Inicialização ao carregar a página
+    document.addEventListener("DOMContentLoaded", () => {
+      carregarPergunta();
     });
+
+    function carregarPergunta() {
+      respondeu = false;
+      const q = perguntas[indicePerguntaAtual];
+      
+      // Atualizar progresso visual
+      document.getElementById("num-pergunta").innerText = indicePerguntaAtual + 1;
+      document.getElementById("score-parcial").innerText = `Acertos: ${acertos}`;
+      document.getElementById("texto-pergunta").innerText = q.pergunta;
+      
+      const porcentagemBarra = ((indicePerguntaAtual) / perguntas.length) * 100;
+      document.getElementById("progress-fill").style.width = `${porcentagemBarra}%`;
+
+      // Esconder botão de próxima
+      const btnProxima = document.getElementById("btn-proxima");
+      btnProxima.style.display = "none";
+
+      // Renderizar opções de resposta
+      const containerOpcoes = document.getElementById("container-opcoes");
+      containerOpcoes.innerHTML = "";
+
+      q.opcoes.forEach((opcao, index) => {
+        const btn = document.createElement("button");
+        btn.className = "btn-opcao-quiz";
+        btn.innerHTML = `<span>${opcao}</span> <i class="fa-regular fa-circle"></i>`;
+        btn.onclick = () => verificarResposta(index, btn);
+        containerOpcoes.appendChild(btn);
+      });
+    }
+
+    function verificarResposta(opcaoSelecionada, botaoClicado) {
+      if (respondeu) return; // Evita múltiplos cliques
+      respondeu = true;
+
+      const q = perguntas[indicePerguntaAtual];
+      const todosBotoes = document.querySelectorAll(".btn-opcao-quiz");
+
+      // Desabilitar botões
+      todosBotoes.forEach(b => b.disabled = true);
+
+      if (opcaoSelecionada === q.correta) {
+        acertos++;
+        botaoClicado.classList.add("correta");
+        botaoClicado.querySelector("i").className = "fa-solid fa-circle-check";
+      } else {
+        botaoClicado.classList.add("errada");
+        botaoClicado.querySelector("i").className = "fa-solid fa-circle-xmark";
+        
+        // Destacar a correta para o usuário aprender
+        todosBotoes[q.correta].classList.add("correta");
+        todosBotoes[q.correta].querySelector("i").className = "fa-solid fa-circle-check";
+      }
+
+      document.getElementById("score-parcial").innerText = `Acertos: ${acertos}`;
+
+      // Mostrar botão de avançar
+      const btnProxima = document.getElementById("btn-proxima");
+      if (indicePerguntaAtual === perguntas.length - 1) {
+        btnProxima.innerHTML = 'Ver Resultado <i class="fa-solid fa-flag-checkered"></i>';
+      } else {
+        btnProxima.innerHTML = 'Próxima Pergunta <i class="fa-solid fa-arrow-right"></i>';
+      }
+      btnProxima.style.display = "inline-block";
+    }
+
+    function proximaPergunta() {
+      indicePerguntaAtual++;
+      if (indicePerguntaAtual < perguntas.length) {
+        carregarPergunta();
+      } else {
+        exibirResultado();
+      }
+    }
+
+    function exibirResultado() {
+      document.getElementById("quiz-body").style.display = "none";
+      document.getElementById("progress-fill").style.width = "100%";
+
+      const resultadoDiv = document.getElementById("quiz-resultado");
+      resultadoDiv.style.display = "block";
+
+      const porcentagem = Math.round((acertos / perguntas.length) * 100);
+      document.getElementById("porcentagem-texto").innerText = `${porcentagem}%`;
+
+      const msg = document.getElementById("mensagem-resultado");
+      if (porcentagem === 100) {
+        msg.innerText = `Sensacional! Você acertou todas as ${perguntas.length} perguntas! É um verdadeiro Coxa-Branca de Raça! 🏆💚`;
+      } else if (porcentagem >= 70) {
+        msg.innerText = `Muito bem! Você acertou ${acertos} de ${perguntas.length} perguntas (${porcentagem}%). Conhece muito da história do Glorioso! ⭐`;
+      } else if (porcentagem >= 50) {
+        msg.innerText = `Bom resultado! Você acertou ${acertos} de ${perguntas.length} perguntas (${porcentagem}%). Que tal dar mais uma lida na seção de história e tentar gabaritar? 📖`;
+      } else {
+        msg.innerText = `Você acertou ${acertos} de ${perguntas.length} perguntas (${porcentagem}%). Continue navegando pelo site para aprender mais sobre o Coxa! ⚽`;
+      }
+    }
+
+    function reiniciarQuiz() {
+      indicePerguntaAtual = 0;
+      acertos = 0;
+      document.getElementById("quiz-resultado").style.display = "none";
+      document.getElementById("quiz-body").style.display = "block";
+      carregarPergunta();
+    }
   </script>
 </body>
 </html>
-// Substitua o trecho do btn.onclick por este:
-btn.onclick = () => {
-  // Limpa a seleção anterior de todos os botões desta pergunta
-  const todosBotoes = divOpcoes.querySelectorAll('.btn-opcao');
-  todosBotoes.forEach(b => {
-    b.style.backgroundColor = 'white';
-    b.style.borderColor = '#ccc';
-  });
-
-  if (opcaoIndex === q.correta) {
-    msgSucesso.style.display = 'block';
-    btn.style.backgroundColor = '#d4edda';
-    btn.style.borderColor = '#c3e6cb';
-  } else {
-    msgSucesso.style.display = 'none';
-    btn.style.backgroundColor = '#f8d7da';
-    btn.style.borderColor = '#f5c6cb';
-  }
-};
-html {
-  scroll-behavior: smooth;
-}
